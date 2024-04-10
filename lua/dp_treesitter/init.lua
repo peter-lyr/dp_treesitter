@@ -1,10 +1,11 @@
 local M = {}
 
-local B = require 'dp_base'
+local sta, B = pcall(require, 'dp_base')
 
 if not sta then return print('Dp_base is required!', debug.getinfo(1)['source']) end
 
 if B.check_plugins {
+      'git@github.com:peter-lyr/dp_init',
       'andymass/vim-matchup',
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
@@ -72,6 +73,7 @@ require 'rainbow.internal'.defhl()
 
 require 'treesitter-context'.setup {
   zindex = 1,
+  mode = 'topline',
   on_attach = function()
     local max_filesize = 1000 * 1024
     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(0))
