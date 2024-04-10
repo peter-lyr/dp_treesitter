@@ -1,10 +1,11 @@
 local M = {}
 
-local B = require 'dp_base'
+local sta, B = pcall(require, 'dp_base')
 
 if not sta then return print('Dp_base is required!', debug.getinfo(1)['source']) end
 
 if B.check_plugins {
+      'git@github.com:peter-lyr/dp_init',
       'andymass/vim-matchup',
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
