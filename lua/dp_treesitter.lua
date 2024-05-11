@@ -82,6 +82,7 @@ require 'treesitter-context'.setup {
     end
     return true
   end,
+  max_lines = 4,
 }
 
 function M.go_to_context()
