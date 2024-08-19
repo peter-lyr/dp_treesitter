@@ -51,10 +51,10 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
     disable = M.disable,
     keymaps = {
-      init_selection = 'qi',
-      node_incremental = 'qi',
-      scope_incremental = 'qu',
-      node_decremental = 'qo',
+      init_selection = '<localleader>f',
+      node_incremental = '<localleader>f',
+      scope_incremental = '<localleader>s',
+      node_decremental = '<localleader>d',
     },
   },
   rainbow = {
